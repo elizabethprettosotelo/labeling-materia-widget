@@ -7,7 +7,7 @@
 		<!-- STYLESHEETS -->
 		<link rel='stylesheet' type='text/css' href='creator.css'>
 		<link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/css/jquery.ui.resizable.min.css'>
-		<link href='//fonts.googleapis.com/css?family=Lato:300,400,700|Roboto+Slab' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=Anybody:300,400,700|Roboto+Slab' rel='stylesheet' type='text/css'>
 
 		<!-- REQUIRED MATERIA JAVASCRIPT -->
 		<script src="materia.creatorcore.js"></script>
@@ -27,57 +27,70 @@
 			<div id='header'>
 				<div class='logo'></div>
 				<h1 id='title'></h1>
-				<div class="link">Edit...</div>
-				<div id='maincontrols'>
-					<span>Background</span>
-					<div class='backgroundtile cork'></div>
-					<div class='backgroundtile graph'></div>
-					<div class='backgroundtile color'><input id='colorpicker' type='color' name='color'><div class='color' id='curcolor'></div></div>
-				</div>
+				<div class="link">
+					<img src="../assets/pencil.png" alt="Edit widget name" class="link-icon"></div>
 			</div>
 
 			<div class="arrow_box hide">Add Image Description</div>
 
 			<div id='controls'>
-				<input type='button' value='Choose a different image' data-intro='Choose an image' id='btnChooseImage'>
-				<input type='button' value='Move &amp; resize image' id='btnMoveResize'>
-				<input type='button' value='Change image description' id='btnChangeDescription'>
-				<div class='helpbox' id='help_adding' style='display:none'>
-					<b>Adding labels:</b><br>
-					Click anywhere<br>on the image<br>
-					<div class='imgframe'>
-						<div class='img help_add'></div>
-					</div>
-				</div>
-				<div class='helpbox' id='help_moving'>
-					<b>Moving labels:</b><br>
-					<div class='imgframe'>
-						<div class='img help_move_label'></div>
-						click &amp; drag
-					</div><br>
-					<b>Moving anchors:</b><br>
-					<div class='imgframe'>
-						<div class='img help_move_anchor'></div>
-						click &amp; drag
-					</div><br>
-				</div>
-				<table id="opacity-toggle">
+				<table id="background-settings">
 					<tr>
-						<td colspan="2"><label>Choose Anchor Opacity:</label></td>
+						<td colspan="2"><label>Background Settings</label></td>
 					</tr>
 					<tr>
-						<td><label for="opacity-toggle">Opaque</label></td>
-						<td><input id="opaque-toggle" type="radio" name="opacity-toggle" value="opaque" checked="checked"/></td>
+						<td><label for="background-settings"></label></td>
+						<td><input id="darktone-toggle" type="radio" name="opacity-toggle" value="opaque" checked="checked"/></td>
 					</tr>
 					<tr>
-						<td><label for="opacity-toggle">Frosted</label></td>
-						<td><input id="frosted-toggle" type="radio" name="opacity-toggle" value="frosted"/></td>
+						<td><label for="background-settings"></label></td>
+						<td><input id="darktone2-toggle" type="radio" name="opacity-toggle" value="opaque" checked="checked"/></td>
 					</tr>
 					<tr>
-						<td><label for="opacity-toggle">Transparent</label></td>
-						<td><input id="transparent-toggle" type="radio" name="opacity-toggle" value="transparent"/></td>
+						<td><label for="background-settings"></label></td>
+						<td><input id="midtone-toggle" type="radio" name="opacity-toggle" value="frosted"/></td>
+					</tr>
+					<tr>
+						<td><label for="background-settings"></label></td>
+						<td><input id="lighttone-toggle" type="radio" name="opacity-toggle" value="transparent"/></td>
 					</tr>
 				</table>
+				<hr>
+				<table id="label-settings">
+					<tr>
+						<td colspan="2"><label>Label Settings</label></td>
+					</tr>
+					<tr>
+						<td><label for="label-settings">Aa</label></td>
+						<td><input id="darktone-toggle" type="radio" name="label-toggle" value="opaque" checked="checked"/></td>
+					</tr>
+					<tr>
+						<td><label for="label-settings">Aa</label></td>
+						<td><input id="midtone-toggle" type="radio" name="label-toggle" value="frosted"/></td>
+					</tr>
+					<tr>
+						<td><label for="label-settings">Aa</label></td>
+						<td><input id="lighttone-toggle" type="radio" name="table-toggle" value="transparent"/></td>
+					</tr>
+				</table>
+				<hr>
+				<div class="opacity-toggle">
+					<label for="opacity-slider">Anchor Settings
+						<span id="opacity-value">100%</span>
+					</label>
+					<input
+						type="range"
+						id="opacity-slider"
+						min="0"
+						max="100"
+						step="1"
+						value="100"
+					>
+				</div>
+				<hr>
+				<input type='button' value='Choose a different image' data-intro='Choose an image' id='btnChooseImage'>
+				<input type='button' value='' id='btnMoveResize'>
+				<input type='button' value='' id='btnChangeDescription'>
 			</div>
 
 			<div id='backgroundcover'></div>
@@ -99,7 +112,7 @@
 			</div>
 
 			<div id='titlechanger' class='box fade'>
-				<b>Give your Labeling widget a title</b>
+				<b>Let's give your widget a title!</b>
 				<form onsubmit='setTitle(titletxt.value);return false;'>
 					<input type='text' id='titletxt' name='titletxt' placeholder='My Labeling widget' autofocus='1'>
 					<input type='submit' value='Done'>
@@ -107,7 +120,7 @@
 			</div>
 
 			<div id='descriptionchanger' class='box fade'>
-				<b>Give your Image a description</b>
+				<b>Add a description to this image.</b>
 				<form onsubmit='setImageDescription(alttxt.value);return false;'>
 					<input type='text' id='alttxt' required name='alttxt' placeholder='My image description' autofocus='1'>
 					<input type='submit' value='Done'>
