@@ -34,25 +34,27 @@
 			<div class="arrow_box hide">Add Image Description</div>
 
 			<div id='controls'>
-				<table id="background-settings">
+				<table id="background-settings" class="color-picker">
 					<tr>
-						<td colspan="2"><label>Background Settings</label></td>
+						<td colspan="4"><label>Background Settings</label></td>
 					</tr>
 					<tr>
-						<td><label for="background-settings"></label></td>
-						<td><input id="darktone-toggle" type="radio" name="opacity-toggle" value="opaque" checked="checked"/></td>
-					</tr>
-					<tr>
-						<td><label for="background-settings"></label></td>
-						<td><input id="darktone2-toggle" type="radio" name="opacity-toggle" value="opaque" checked="checked"/></td>
-					</tr>
-					<tr>
-						<td><label for="background-settings"></label></td>
-						<td><input id="midtone-toggle" type="radio" name="opacity-toggle" value="frosted"/></td>
-					</tr>
-					<tr>
-						<td><label for="background-settings"></label></td>
-						<td><input id="lighttone-toggle" type="radio" name="opacity-toggle" value="transparent"/></td>
+						<td>
+							<input type="radio" id="darktone-toggle" name="background-tone" checked>
+							<label for="darktone-toggle" class="swatch dark1"></label>
+						</td>
+						<td>
+							<input type="radio" id="darktone2-toggle" name="background-tone">
+							<label for="darktone2-toggle" class="swatch dark2"></label>
+						</td>
+						<td>
+							<input type="radio" id="midtone-toggle" name="background-tone">
+							<label for="midtone-toggle" class="swatch mid"></label>
+						</td>
+						<td>
+							<input type="radio" id="lighttone-toggle" name="background-tone">
+							<label for="lighttone-toggle" class="swatch light"></label>
+						</td>
 					</tr>
 				</table>
 				<hr>

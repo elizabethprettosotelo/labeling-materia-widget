@@ -209,8 +209,8 @@ textarea {
 		}
 
 		.link-icon {
-			width: 16px;
-			height: 16px;
+			width: 18px;
+			height: 18px;
 			flex-shrink: 0;
 		  }	
 }
@@ -253,6 +253,56 @@ textarea {
 		margin-left: 7px;
 	}
 }
+
+#background-settings {
+	&.color-picker {
+	  border-collapse: collapse;
+  
+	  td {
+		padding: 6px;
+		position: relative; // 🔑 needed for hidden radio
+	  }
+  
+	  input[type="radio"] {
+		position: absolute;
+		opacity: 0;
+		pointer-events: none;
+	  }
+  
+	  .swatch {
+		display: block;
+		width: 48px;
+		height: 32px;
+		border-radius: 8px;
+		cursor: pointer;
+		border: 2px solid transparent;
+		box-sizing: border-box;
+		transition: border-color 0.15s ease, transform 0.1s ease;
+		transform-origin: center;
+		will-change: transform;
+  
+		&.dark1 { background: #222; }
+		&.dark2 { background: #444; }
+		&.mid   { background: #888; }
+		&.light { background: #ddd; }
+  
+		&:hover {
+		  transform: scale(1.05);
+		}
+	  }
+  
+	  input[type="radio"]:checked + .swatch {
+		border-color: #fff;
+		transform: scale(1.05);
+	  }
+  
+	  input[type="radio"]:focus + .swatch {
+		outline: 2px solid #66f;
+		outline-offset: 3px;
+	  }
+	}
+  }
+  
 
 #image_alt {
 	width: 170px;
